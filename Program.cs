@@ -42,8 +42,8 @@ namespace Travel
     { 
         static void Main(string[] args)
         {
-           
-            string _filePath = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory); 
+
+            string _filePath = Environment.CurrentDirectory;
             Console.WriteLine(_filePath);
             string json = File.ReadAllText($"{_filePath}\\input\\{args[0]}");
             string json1 = File.ReadAllText($"{_filePath}\\input\\{args[1]}");
@@ -73,7 +73,7 @@ namespace Travel
 
             if (args.Length > 2)
             {
-                name = args[2];
+                name = Environment.CurrentDirectory +"\\output\\"+ args[2];
             }
 
             JsonFileUtils.PrettyWrite(data1, name);
