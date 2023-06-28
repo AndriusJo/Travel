@@ -1,0 +1,26 @@
+[
+  {
+    "Name": "region1",
+    "Locations": [
+      "location1",
+      "location2",
+      "location3",
+      "location4",
+      "location5",
+      "location6",
+      "location7"
+    ]
+  },
+  {
+    "Name": "region2",
+    "Locations": [
+      "location3",
+      "location4",
+      "location5"
+    ]
+  },
+  {
+    "Name": "region3",
+    "Locations": []
+  }
+]

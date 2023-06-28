@@ -9,20 +9,20 @@ namespace Travel
     public class Location
     {
         public string? Name { get; set; }
-        public double[] Coordinates { get; set; }
+        public double[]? Coordinates { get; set; }
     }
 
     public class Region
     {
         public string? Name { get; set; }
 
-        public object[][][] Coordinates { get; set; }
+        public object[][][]? Coordinates { get; set; }
 
-        public ArrayList Locations { get; set; }
+        public ArrayList? Locations { get; set; }
 
         public bool ShouldSerializeCoordinates()
         {
-            return (Coordinates.Count() == 0);
+            return false;
         }
     }
 
@@ -45,11 +45,23 @@ namespace Travel
 
             string _filePath = Environment.CurrentDirectory;
             Console.WriteLine(_filePath);
+
+            if (!File.Exists($"{_filePath}\\input\\{args[0]}") || !File.Exists($"{_filePath}\\input\\{args[1]}"))
+            {
+                Console.WriteLine("FILES DO NOT EXIST");
+                return;
+            }
+
             string json = File.ReadAllText($"{_filePath}\\input\\{args[0]}");
             string json1 = File.ReadAllText($"{_filePath}\\input\\{args[1]}");
 
             var data = JsonConvert.DeserializeObject<List<Location>>(json);
             var data1 = JsonConvert.DeserializeObject<List<Region>>(json1);
+
+            if(data is null || data1 is null)
+            {
+                return;
+            }
 
             for (int i = 0; i < data1.Count; i++)
             {
@@ -82,6 +94,11 @@ namespace Travel
         static bool isInside(Region region,Location location)
         {
             int count = 0;
+
+            if (location.Coordinates == null || region.Coordinates == null)
+            {
+                return false;
+            }
 
             double x = location.Coordinates[0];
             double y = location.Coordinates[1];
@@ -121,45 +138,3 @@ namespace Travel
         }
     } 
 }
-
-
-
-
-
-            //foreach(var d in data)
-            //{
-            //    Console.WriteLine(d.Name);
-            //    Console.WriteLine(d.Coordinates[0]);
-            //    Console.WriteLine(d.Coordinates[1]);
-
-            //}
-
-            //foreach (var d in data1)
-            //{
-            //    Console.WriteLine(d.Name);
-            //    foreach (var c in d.Coordinates[0])
-            //    {
-            //        Console.WriteLine(c[0]);
-            //        Console.WriteLine(c[1]);
-            //    }
-            //}
-
-
-            //double x = data[0].Coordinates[0];
-            //double y = data[0].Coordinates[1];
-            //var cord = data1[0].Coordinates[0];
-            //double xp1 = Convert.ToDouble(cord[2].GetValue(0));
-            //double yp1 = Convert.ToDouble(cord[2].GetValue(1));
-            //double xp2 = Convert.ToDouble(cord[3].GetValue(0));
-            //double yp2 = Convert.ToDouble(cord[3].GetValue(1));
-
-            //if ((y < yp1) != (y < yp2))
-            //{
-            //    Console.WriteLine("hi");
-            //    double x0 = xp1 + (y - yp1) / (yp2 - yp1) * (xp2 - xp1);
-            //    Console.WriteLine(x0);
-            //    if(x < x0)
-            //    {
-            //        Console.WriteLine("hellooo");
-            //    }
-            //}
