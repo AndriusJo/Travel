@@ -81,11 +81,14 @@ namespace Travel
             string output = JsonConvert.SerializeObject(data1);
             Console.WriteLine(output);
 
-            string name = "output";
-
+            string name;
             if (args.Length > 2)
             {
                 name = Environment.CurrentDirectory +"\\output\\"+ args[2];
+            }
+            else
+            {
+                name = Environment.CurrentDirectory + "\\output\\" + "output.json";
             }
 
             JsonFileUtils.PrettyWrite(data1, name);
