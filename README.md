@@ -17,5 +17,5 @@ Option 2:
 1. Install .NET Core on your machine (**If you already have it, skip this step**), instructions how to do it: https://learn.microsoft.com/en-us/dotnet/core/install/ .
 2. Open the terminal.
 3. Change directory to the main directory of this file (where the .sln file is) (use the cd command).
-4. Write the command **"dotnet run nameoflocationfile nameofregionfile nameofoutputfile"** (The output file name is optional). e.g. **"dotnet run locations.json regions.json matches"**.
+4. Write the command **"dotnet run nameoflocationfile nameofregionfile nameofoutputfile"** (The output file name is optional). e.g. **"dotnet run locations.json regions.json matches.json"**.
 5. Check the output in the "output" folder.
