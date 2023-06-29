@@ -7,7 +7,7 @@ In the files I have provided, I expanded the 1st region, to include the second r
 
 At this point there are two options:
 
-Option 1 (Using the .exe file, which waas generated for windows x86, so may not work on other machines):  
+Option 1 (Using the .exe file, which was generated for windows x86, so may not work on other machines):  
 1. Open the terminal.
 2. Change the directory to the "Published" folder (use the cd command).
 3. Write the command ** .\Travel nameoflocationfile nameofregionfile nameofoutputfile ** (The output file name is optional). e.g. ** .\Travel locations.json regions.json matches.json **.
