@@ -1,28 +1,21 @@
 [
   {
-    "Name": "region1",
-    "Locations": [
+    "region": "region1",
+    "matched_locations": [
       "location1",
-      "location2",
-      "location3",
-      "location4",
-      "location5",
-      "location6",
-      "location7",
-      "location8"
+      "location2"
     ]
   },
   {
-    "Name": "region2",
-    "Locations": [
+    "region": "region2",
+    "matched_locations": [
       "location3",
       "location4",
-      "location5",
-      "location8"
+      "location5"
     ]
   },
   {
-    "Name": "region3",
-    "Locations": []
+    "region": "region3",
+    "matched_locations": []
   }
 ]
