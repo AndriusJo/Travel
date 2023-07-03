@@ -1,7 +1,7 @@
 # Installation
 
-1. Download the zip file and unzip it at your chosen directory.
-In the main directory and in the "Publish" folder there are folders: "input" and "output". You can replace or add extra files to the "input" folder, by default there are two files that you can use.  
+Firstly - Download the zip file and unzip it at your chosen directory.
+In the Travel folder and in the "Publish" folder (which is inside) there are folders: "input" and "output". You can replace or add extra files to the "input" folder, by default there are two files that you can use.  
 In the files I have provided, I expanded the 1st region, to include the second region (overlap). I also added locations 7 and 8, which are on the edges of the regions 2 and 1 respectively.  
 # Running the program
 
